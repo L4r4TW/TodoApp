@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>TodoList register</title>
+</head>
+<body>
+    <header>Register</header>
+    <form class="register-form" method="post">
+        {% csrf_token %}
+        <div class="form-field">
+            <label for="username">Username: </label>
+            <input
+                class="input-text"
+                id="formInput#text"
+                type="text"
+                name="username"
+                placeholder="Enter your username..."
+            />
+            </div>
+
+            <!-- Input:Password -->
+            <div class="form-field">
+            <label for="formInput#password">Password: </label>
+            <input
+                class="input-password"
+                id="formInput#passowrd"
+                type="password"
+                name="password"
+                placeholder="••••••••"
+            />
+            </div>
+
+            <div class="form-field">
+            <label for="password2">Password: </label>
+            <input
+                class="input-password"
+                id="formInput#passowrd"
+                type="password"
+                name="password"
+                placeholder="••••••••"
+            />
+        </div>
+        <div class="auth__actions">
+            <input class="submit-button" type="submit" value="Register" />
+        </div>
+    </form>
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>
